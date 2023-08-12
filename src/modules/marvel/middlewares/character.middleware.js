@@ -6,6 +6,7 @@ module.exports = {
       [Segments.BODY]: {
         name: Joi.string().required(),
         description: Joi.string().allow(null, ''),
+        characters: Joi.array().required()
       },
     })
   },

@@ -4,7 +4,7 @@ const {
  createCharacter,
  getAllCharacters,
  getCharacterByUser,
- getCharacters,
+ getCharactersByUser,
  deletedCharacter,
  getCharactersBasicInfo
   } = require('../controllers/marvelControllers')
@@ -23,9 +23,9 @@ MarvelRouter.post('/characters/salve',verifyPayloadForCreation(), createCharacte
 
 MarvelRouter.delete('/:personagemId',verifyCharacterIdInParams(), deletedCharacter)
 
-MarvelRouter.put('/characters/updatedPersonagem',verifyCharacterIdInParams(), updatedCharacter)
+MarvelRouter.put('/characters/update/:personagemId',verifyCharacterIdInParams(), updatedCharacter)
 
-MarvelRouter.get('/characters/personagens', getCharacters)
+MarvelRouter.get('/characters/personagens', getCharactersByUser)
 
 MarvelRouter.get('/characters/:personagemId',verifyCharacterIdInParams(), getCharacterByUser)
 

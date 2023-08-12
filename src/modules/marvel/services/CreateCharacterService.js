@@ -4,10 +4,11 @@ class CreateCharacterService {
     this.characterRepository = characterRepository
   }
 
-  async execute({ name, description, user_id }) {
+  async execute({ name, description, characters, user_id }) {
     const character = await this.characterRepository.createCharacter({
       name,
       description,
+      characters,
       user_id,
     })
 
